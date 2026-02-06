@@ -68,7 +68,7 @@ const App = () => {
       <button onClick={() => setBad(bad + 1)}>bad</button>
       <Statistics good={good} neutral={neutral} bad={bad} />
       <div>
-        <h2>anecdote of the day</h2>
+        <h2>Anecdote of the day</h2>
         <p>{anecdotes[selected]}</p>
         <p>has {votes[selected]} votes</p>
         <button onClick={() => {
@@ -77,6 +77,9 @@ const App = () => {
           setVotes(copy)
         }}>vote</button>
         <button onClick={() => setSelected(Math.floor(Math.random() * anecdotes.length))}>next anecdote</button>
+        <h2>Anecdote of most votes</h2>
+        <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
+        <p>has {votes[votes.indexOf(Math.max(...votes))]} votes</p>
       </div>
     </div>
   )
