@@ -1,7 +1,10 @@
 const Header = (props) => <h1>{props.course}</h1>
 
 const Total = (props) => {
-  const total = props.parts.reduce((sum, part) => sum + part.exercises, 0)
+  const total = props.parts.reduce((sum, part) => {
+    console.log("Whats happening", sum, part.exercises)
+    return sum + part.exercises
+  }, 0)
   return (<p>
     <strong>total of {total} exercises</strong>
     </p>)
