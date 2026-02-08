@@ -18,6 +18,11 @@ const App = () => {
         <div>
           <button type="submit" onClick={(event) => {
             event.preventDefault()
+            // Check if the name already exists in the phonebook
+            if (persons.some(person => person.name === newName)) {
+              alert(`${newName} is already added to phonebook`)
+              return
+            }
             const personObject = {
               name: newName
             }
