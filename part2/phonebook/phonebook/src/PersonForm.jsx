@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons }) => {
   return (
     <form>
@@ -24,9 +26,12 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
             name: newName,
             number: newNumber
           }
-          setPersons(persons.concat(personObject))
-          setNewName('')
-          setNewNumber('')
+          // Save data to server with POST request
+          axios.post('http://localhost:3001/persons', personObject).then(response => {
+            setPersons(persons.concat(response.data))
+            setNewName('')
+            setNewNumber('')
+          })
         }}>add</button>
       </div>
       <div>debug: {newName}</div>

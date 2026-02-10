@@ -9,6 +9,7 @@ const App = () => {
   const [shownPersons, setShownPersons] = useState([])
 
   // Fetching data from the server
+ 
   useEffect(() => {
     axios.get('http://localhost:3001/persons').then(response => {
       const persons = response.data
