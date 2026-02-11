@@ -10,6 +10,7 @@ const StatisticLine = (props) => {
   )
 }
 // a proper place to define a component
+// 
 const Statistics = (props) => {
   if (props.good === 0 && props.neutral === 0 && props.bad === 0) {
     return (
